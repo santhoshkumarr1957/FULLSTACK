@@ -13,16 +13,15 @@ function App() {
     console.log(email,pass)
   }
   return (
-        <center>
-        <div className='bg-gray border'>
-        <form onSubmit={e}>
+        <div className='flex bg-gray border items-center justify-center'>
+        <form onSubmit={e} className='flex item-center justify-center h-screen'>
             <input type='email' required placeholder='enter your email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-            <br></br>
+            
             <input type='password' required placeholder='enter your password' value={pass} onChange={(e)=>{setPass(e.target.value)}}/>
-            <br></br>
+            
             <button type='submit' className="text-green-500">Submit</button>
         </form>
-      </div></center>
+      </div>
     )
 }
 
