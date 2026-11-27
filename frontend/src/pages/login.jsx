@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import './login.css'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function App() {
   {/*const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")*/}
   const navigate = useNavigate()
-
+  const location = useLocation()
   const[formdata,setFormdata]=useState({
     username:"",
     email:"",
     password:""
   })
+  const registerdata = location.state
   function HandleChange(e){
     setFormdata({
       ...formdata,
@@ -20,10 +21,16 @@ function App() {
   }
   const e = (event) => {
     event.preventDefault()
-    console.log("login page")
-    console.log(formdata)
-    alert("login successfull")
-    navigate('/dashboard',{state:formdata})
+    if(registerdata.email === formdata.email && registerdata.password === formdata.password){
+      console.log("login page")
+      console.log(formdata)
+      console.log(registerdata)
+      alert("login successfull")
+      navigate('/dashboard',{state:formdata})
+  }
+    else{
+      console.log("Not a valid credential")
+  }
   }
   return (
         <div className='flex bg-gray border'>
