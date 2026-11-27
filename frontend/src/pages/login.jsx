@@ -33,15 +33,16 @@ function App() {
   }
   }
   return (
-        <div className='flex bg-gray border'>
-        <form onSubmit={e}>
-            <input type='text' required placeholder='Enter your name' name='username' onChange={HandleChange}/>
+        <div className='min-h-screen flex items-center justify-center bg-gray-100' >
+        <form onSubmit={e} className="w-100 h-auto bg-white p-10  rounded-xl shadow-lg">
+            <h1 className="block text-font-bold text-2xl w-full text-center mb-7">LOGIN</h1>
+            Name:<input type='text' required placeholder='Enter your name' name='username' onChange={HandleChange}  className="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
 
-            <input type='email' required placeholder='enter your email' name='email' onChange={HandleChange}/>
+            E-mail:<input type='email' required placeholder='enter your email' name='email' onChange={HandleChange}  className="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             
-            <input type='password' required placeholder='enter your password' name='password' onChange={HandleChange}/>
+            Password:<input type='password' required placeholder='enter your password' name='password' onChange={HandleChange}  className="w-full border border-gray-300 p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             
-            <button type='submit' className="text-green-500">Submit</button>
+            <button type='submit' className="w-40 mx-auto my-5 rounded-lg flex justify-center bg-green-400 hover:bg-green-500 p-3 w-50 cursor-pointer transition">Submit</button>
         </form>
       </div>
     )

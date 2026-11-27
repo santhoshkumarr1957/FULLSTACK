@@ -13,17 +13,18 @@ function Register() {
         navigate("/",{state:data})
     }
     return ( 
-        <div className='flex bg-gray border'>
-        <form onSubmit={handleSubmit(onSubmit1)}>
-            <input type='text' required placeholder='Enter your name' name='username' {...register("name")}/>
-            <p>{errors.name?.message}</p>
-            <input type='email' required placeholder='Enter your mail id' name='email' {...register("email")}/>
-            <p>{errors.email?.message}</p>
-            <input type='password' required placeholder='Enter your password' name='password' {...register("password")}/>
-            <p>{errors.password?.message}</p>
-            <input type='number' required placeholder='Enter your age' name='age' {...register("age")}/>
-            <p>{errors.age?.message}</p>
-            <button type="submit">submit</button>
+        <div className='min-h-screen flex items-center justify-center bg-gray-100'>
+        <form onSubmit={handleSubmit(onSubmit1)} className="w-100 h-auto bg-white p-10  rounded-xl shadow-lg">
+            <label className="block text-font-bold text-xl w-full text-center mb-7 ">Register</label>
+            Name:<input type='text' required placeholder='Enter your name' name='username' {...register("name")} className="w-full border border-gray-300 p-3 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p className="text-red-500 text-sm mb-2">{errors.name?.message}</p>
+            E-mail:<input type='email' required placeholder='Enter your mail id' name='email' {...register("email")} className="w-full border border-gray-300 p-3 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p className="text-red-500 text-sm mb-2">{errors.email?.message}</p>
+            Password:<input type='password' required placeholder='Enter your password' name='password' {...register("password")} className="w-full border border-gray-300 p-3 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p className="text-red-500 text-sm mb-2">{errors.password?.message}</p>
+            Age:<input type='number' required placeholder='Enter your age' name='age' {...register("age")}className="w-full border border-gray-300 p-3 rounded-lg mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            <p className="text-red-500 text-sm mb-2">{errors.age?.message}</p>
+            <button type="submit" className="w-40 mx-auto my-5 rounded-lg flex justify-center bg-green-400 hover:bg-green-500 p-3 w-50 cursor-pointer transition">submit</button>
         </form>
       </div>
      );
