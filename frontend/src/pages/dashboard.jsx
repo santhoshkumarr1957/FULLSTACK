@@ -8,8 +8,17 @@ function App() {
         setUserdata(location.state)
         console.log(userdata)
     }
+    const checkendpoint =async () =>{
+        const response = await API.get("/api/get")
+        console.log(response.data)
+    }
+    const [count,setCount] = useState(0)
+    useEffect(()=>{
+    setLogindata(location.state)
+    console.log(logindata)
+    }, )
     return ( 
-        <button onClick={displayData}>button</button>
+        <button onClick={()=>setCount(count+1)}>submit</button>
      );
 }
 
